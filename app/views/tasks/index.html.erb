@@ -1,0 +1,47 @@
+<h1>Listing Tasks</h1>
+<%= link_to "Ajouter", new_task_path %>
+<table style="border=1px solid black">
+  <tr>
+    <th>Title</th>
+    <th>Details</th>
+    <th>Completed</th>
+    <th>Terminer</th>
+    <th>Modifier</th>
+    <th>Supprimer</th>
+  </tr>
+  <% @tasks.each do |task| %>
+  <tr>
+    <% if task.completed == false%>
+    <td><%= task.title %></td>
+    <td><%= task.details %></td>
+    <td><%= task.completed %></td>
+    <td>
+      <form action="tasks/<%= task[:id] %>/done" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Terminer">
+      </form>
+    </td>
+    <td><%= link_to 'Modifier', edit_task_path(task) %></td>
+    <td><%= link_to 'Supprimer', task, data: {turbo_method: :delete, turbo_confirm: "Êtes vous sûr ?"} %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+<h1>Listing Tasks Done</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Details</th>
+    <th>Supprimer</th>
+  </tr>
+  <% @tasks.each do |task| %>
+  <tr>
+    <% if task.completed == true%>
+    <td><%= task.title %></td>
+    <td><%= task.details %></td>
+    <td><%= link_to 'Supprimer', task, data: {turbo_method: :delete, turbo_confirm: "Êtes vous sûr ?"} %></td>
+    <% end %>
+  </tr>
+  <% end %>
