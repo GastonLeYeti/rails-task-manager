@@ -1,0 +1,15 @@
+current directory: /Users/gaston/code/GastonLeYeti/test_exo_Rails/rails-task-manager/gems/bindex-0.8.1/ext/skiptrace
+/Users/gaston/.rbenv/versions/3.1.2/bin/ruby -I /Users/gaston/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230221-40177-skwd9z.rb extconf.rb
+creating Makefile
+
+current directory: /Users/gaston/code/GastonLeYeti/test_exo_Rails/rails-task-manager/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/gaston/code/GastonLeYeti/test_exo_Rails/rails-task-manager/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/gaston/code/GastonLeYeti/test_exo_Rails/rails-task-manager/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20230221-40177-l0pbm8/skiptrace/internal
